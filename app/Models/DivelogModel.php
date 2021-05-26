@@ -4,24 +4,21 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PlaceModel extends Model
+class DivelogModel extends Model
 {
     protected $DBGroup = 'default';
-    protected $table = 'DL_Place';
+    protected $table = 'DL_Logbook';
     protected $primaryKey = 'ID';
 
     //protected $allowedFields = ['ID','Place','Comments'];
 
     public function noticeTable()
     {
-
-        $builder = $this->db->table('DL_Place')
-            ->select('DL_Place.ID , DL_Logbook.Country, DL_Place.Place, DL_Logbook.City, DL_Place.MaxDepth')
-            ->join('DL_Logbook', 'DL_Place.ID = DL_Logbook.PlaceID', 'inner')
-            ->groupBy('DL_Place.ID');
-
+        $builder = $this->db->table('DL_Logbook')
+            ->select('ID,Number,Divedate,Divetime,Depth,Place,City,Profile');
         return $builder;
     }
+
 
     public function get($ID)
     {

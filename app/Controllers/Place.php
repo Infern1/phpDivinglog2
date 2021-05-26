@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PlaceModel;
-use monken\TablesIgniter;
+use \Hermawan\DataTables\DataTable;
 
 use PhpParser\Node\Expr\AssignOp\Plus;
 
@@ -13,38 +13,36 @@ class Place extends BaseController
     {
         $data = [
             'title' => 'Dive Places',
+            'active_menu' => 'place'
         ];
-        //echo view('templates/header', $data);
-        echo view('place/overview');        
-        //echo view('templates/footer');
+        echo view('templates/header', $data);
+        echo view('place/overview');
+        echo view('templates/footer');
     }
 
     public function fetch_all()
     {
         $placeModel = new PlaceModel();
-        $data_table = new TablesIgniter();
-        $data_table->setTable($placeModel->noticeTable())
-            ->setDefaultOrder('ID', 'DESC')    
-            ->setSearch(['Place', 'Comments'])
-            ->setOrder(['ID'])
-            ->setOutput(['ID', 'Place', 'Comments']);
+        $respons = $placeModel->noticeTable();
 
-        return $data_table->getDatatable();
+        return DataTable::of($respons)
+            ->edit('Place', function ($row) {
+                $id = $row->ID;
+                $place = $row->Place;
+                return '<a href=' . base_url('place/view/' . $id) . '>' . $place . '</a>';
+            })
+            ->toJson(true);
     }
 
     public function view($ID)
     {
         $placeModel = new PlaceModel();
-        
-
         $data = [
-            'title' => 'Dive Details',
-            'place' =>$placeModel->getPlace($ID)
+            'title' => 'Dive Site Details',
+            'place' => $placeModel->get($ID)
         ];
         echo view('templates/header', $data);
-        echo view('place/detail', $data);        
+        echo view('place/detail', $data);
         echo view('templates/footer');
-        
-
     }
 }

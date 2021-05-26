@@ -2,24 +2,23 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col">Dive Sites</div>
+                <div class="col">Dive Log</div>
                 <div class="col text-right">
-
                 </div>
             </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="places" class="table table-striped table-bordered">
+                <table id="divelog" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Place</th>
-                            <th>Country</th>
-                            <th>City</th>
-                            <th>MaxDepth</th>
+                            <th>#</th>
+                            <th>Dive Date</th>
+                            <th>Dive Time</th>
+                            <th>Max Depth</th>
+                            <th>Location</th>
                         </tr>
                     </thead>
-
                 </table>
             </div>
             <div>
@@ -31,28 +30,28 @@
 
 <script>
     $(document).ready(function() {
-        $('#places').DataTable({
+        $('#divelog').DataTable({
             processing: true,
             serverSide: true,
+            order: [],
             ajax: {
-                url: "<?php echo base_url('place/fetch_all') ?>",
+                url: "<?php echo base_url('divelog/fetch_all') ?>",
                 method: 'POST'
             },
             columns: [{
-                    data: 'Place',
-                    name: 'DL_Place.Place'
+                    data: 'Number'
                 },
                 {
-                    data: 'Country',
-                    name: 'DL_Logbook.Country'
+                    data: 'Divedate'
                 },
                 {
-                    data: 'City',
-                    name: 'DL_Logbook.City'
+                    data: 'Divetime'
                 },
                 {
-                    data: 'MaxDepth',
-                    name: 'DL_Place.MaxDepth'
+                    data: 'Depth'
+                },
+                {
+                    data: 'Place'
                 }
             ]
         });
