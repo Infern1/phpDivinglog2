@@ -32,12 +32,12 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'localhost',
-		'username' => '',
-		'password' => '',
-		'database' => '',
+		'hostname' => '192.168.1.2',
+		'username' => 'duiken',
+		'password' => 'A[jE9lgh8uvi]c)G',
+		'database' => 'duiken',
 		'DBDriver' => 'MySQLi',
-		'DBPrefix' => '',
+		'DBPrefix' => 'DL_',
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
 		'charset'  => 'utf8',
