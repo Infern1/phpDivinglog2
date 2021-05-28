@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col">Dive Sites</div>
+                <div class="col"><?= lang('Text.dive_site_pagetitle') ?></div>
                 <div class="col text-right">
 
                 </div>
@@ -14,10 +14,10 @@
                 <table id="diveplace" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Country</th>
-                            <th>City / Island</th>
-                            <th>Country</th>
-                            <th>Max Depth</th>
+                            <th><?= lang('Text.logbook_place') ?></th>
+                            <th><?= lang('Text.logbook_city') ?></th>
+                            <th><?= lang('Text.logbook_country') ?></th>
+                            <th><?= lang('Text.logbook_depth') ?></th>
                         </tr>
                     </thead>
 

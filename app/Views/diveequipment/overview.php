@@ -3,7 +3,9 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col">Dive Equipment</div>
+                <div class="col"><?= lang(
+                    'Text.equip_details_pagetitle'
+                ) ?></div>
                 <div class="col text-right">
 
                 </div>
@@ -14,11 +16,11 @@
                 <table id="diveequipment" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Manufacturer</th>
-                            <th>Active</th>
-                            <th>Pic</th>
-                            <th>Service</th>
+                            <th><?= lang('Text.equip_object') ?></th>
+                            <th><?= lang('Text.equip_manufacturer') ?></th>
+                            <th><?= lang('Text.equip_inactive') ?></th>
+                            <th><?= lang('Text.equip_title_photo') ?></th>
+                            <th><?= lang('Text.equip_title_service') ?></th>
                         </tr>
                     </thead>
 
