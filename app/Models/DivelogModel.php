@@ -7,14 +7,14 @@ use CodeIgniter\Model;
 class DivelogModel extends Model
 {
     protected $DBGroup = 'default';
-    protected $table = 'DL_Logbook';
+    protected $table = 'Logbook';
     protected $primaryKey = 'ID';
 
     //protected $allowedFields = ['ID','Place','Comments'];
 
     public function noticeTable()
     {
-        $builder = $this->db->table('DL_Logbook')
+        $builder = $this->db->table('Logbook')
             ->select('ID,Number,Divedate,Divetime,Depth,Place,City,Profile');
         return $builder;
     }

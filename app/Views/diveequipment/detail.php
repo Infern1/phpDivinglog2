@@ -1,0 +1,1 @@
+<p><?= esc($diveplace['Place']) ?></p>

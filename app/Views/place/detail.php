@@ -1,1 +1,0 @@
-<p><?= esc($place['Place']) ?></p>

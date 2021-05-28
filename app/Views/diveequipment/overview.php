@@ -3,23 +3,25 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col"><?= lang('Text.dive_log') ?></div>
+                <div class="col">Dive Equipment</div>
                 <div class="col text-right">
+
                 </div>
             </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="divelog" class="table table-striped table-bordered">
+                <table id="diveequipment" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th><?= lang('Text.dlog_title_divedate') ?></th>
-                            <th><?= lang('Text.dlog_title_divetime') ?></th>
-                            <th><?= lang('Text.dlog_title_depth') ?></th>
-                            <th><?= lang('Text.dlog_title_location') ?></th>
+                            <th>Product</th>
+                            <th>Manufacturer</th>
+                            <th>Active</th>
+                            <th>Pic</th>
+                            <th>Service</th>
                         </tr>
                     </thead>
+
                 </table>
             </div>
             <div>
@@ -31,33 +33,34 @@
 
 <script>
 $(document).ready(function() {
-    $('#divelog').DataTable({
+    $('#diveequipment').DataTable({
         language: {
             url: '<?= lang('Text.datatable_lang') ?>'
         },
         processing: true,
         serverSide: true,
         pageLength: <?= $config->max_list ?>,
-        order: [],
         ajax: {
-            url: "<?php echo base_url('divelog/fetch_all'); ?>",
+            url: "<?php echo base_url('diveequipment/fetch_all'); ?>",
             method: 'POST'
         },
         columns: [{
-                data: 'Number'
+                data: 'Object'
             },
             {
-                data: 'Divedate'
+                data: 'Manufacturer'
             },
             {
-                data: 'Divetime'
+                data: 'Inactive'
+
             },
             {
-                data: 'Depth'
+                data: 'PhotoPath'
             },
             {
-                data: 'Place'
+                data: 'Service'
             }
+
         ]
     });
 });
