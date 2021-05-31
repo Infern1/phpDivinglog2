@@ -505,7 +505,7 @@ return [
 
     // Dive Country related values
 
-    'country_details_pagetitle' => 'Dive Country - ',
+    'country_details_pagetitle' => 'Duik Landen',
     'country_sect_comments' => 'Comments:',
     'country_sect_activity' => 'Diving Activity in ',
 
@@ -538,8 +538,8 @@ return [
 
     'country_none' => 'No countries are currently available.',
 
-    'country_title_country' => 'Country',
-    'country_title_count' => 'Dives',
+    'country_title_country' => 'Land',
+    'country_title_count' => '# Duiken',
 
     // Units
 

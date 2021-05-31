@@ -8,8 +8,7 @@
  * Last Modified: $Date$
  */
 return [
-    'datatable_lang' =>
-        'https://cdn.datatables.net/plug-ins/1.10.24/i18n/en-gb.json',
+    'datatable_lang' => 'https://cdn.datatables.net/plug-ins/1.10.24/i18n/en-gb.json',
     'yes' => 'Yes',
     'no' => 'No',
 
@@ -152,11 +151,7 @@ return [
     'water' => ['Salt', 'Fesh', 'Brackish'],
     'tanktype' => ['Alumimium', 'Steel', 'Carbon'],
     'dbltank' => ['Single Cylinder', 'Twin Cylinders'],
-    'supplytype' => [
-        'Open Circuit (OC)',
-        'Semi Closed Rebreather (SCR)',
-        'Closed Circuit Rebreather (CCR)',
-    ],
+    'supplytype' => ['Open Circuit (OC)', 'Semi Closed Rebreather (SCR)', 'Closed Circuit Rebreather (CCR)'],
     'entry' => ['Shore', 'Boat'],
 
     'logbook_dive_linktitle' => 'details',
@@ -379,14 +374,7 @@ return [
     'city_map_linktitle' => 'Map of ',
     'city_map_link' => 'View map',
 
-    'citytype' => [
-        'City',
-        'Island',
-        'Hotel',
-        'Live Aboard',
-        'Camping',
-        'Day Trip',
-    ],
+    'citytype' => ['City', 'Island', 'Hotel', 'Live Aboard', 'Camping', 'Day Trip'],
 
     // Dive City List related values
 

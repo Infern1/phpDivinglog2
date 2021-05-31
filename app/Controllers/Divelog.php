@@ -3,7 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\DivelogModel;
-use \Hermawan\DataTables\DataTable;
+use App\Models\UrlHelper;
+use Hermawan\DataTables\DataTable;
 
 use PhpParser\Node\Expr\AssignOp\Plus;
 
@@ -13,7 +14,7 @@ class Divelog extends BaseController
     {
         $data = [
             'title' => 'Dive Log',
-            'active_menu' => 'divelog'
+            'active_menu' => 'divelog',
         ];
         echo view('templates/header', $data);
         echo view('divelog/overview');
@@ -43,7 +44,7 @@ class Divelog extends BaseController
         $data = [
             'title' => 'Dive Log Details',
             'active_menu' => 'divelog',
-            'dive' => $divelogModel->get($ID)
+            'dive' => $divelogModel->get($ID),
         ];
         echo view('templates/header', $data);
         echo view('divelog/detail', $data);

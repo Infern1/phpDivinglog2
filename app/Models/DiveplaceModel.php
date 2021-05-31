@@ -16,10 +16,7 @@ class DiveplaceModel extends Model
     {
         $builder = $this->db
             ->table('Place')
-            ->select(
-                'Place.ID , Logbook.Country, Place.Place, Logbook.City, Place.MaxDepth,COUNT(*) AS Dives',
-                false
-            )
+            ->select('Place.ID , Logbook.Country, Place.Place, Logbook.City, Place.MaxDepth,COUNT(*) AS Dives', false)
             ->join('Logbook', ' Place.ID = Logbook.PlaceID ', 'inner')
             ->groupBy('Place.ID');
         return $builder;

@@ -3,7 +3,9 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col">Dive Countries</div>
+                <div class="col"><?= lang(
+                    'Text.country_details_pagetitle'
+                ) ?></div>
                 <div class="col text-right">
 
                 </div>
@@ -14,8 +16,8 @@
                 <table id="divecountry" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Country</th>
-                            <th>Nr. Dives</th>
+                            <th><?= lang('Text.country_title_country') ?></th>
+                            <th><?= lang('Text.country_title_count') ?></th>
                         </tr>
                     </thead>
 
